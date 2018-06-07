@@ -3,15 +3,12 @@ package it.polito.tdp.rivers.db;
 import java.sql.Connection;
 import java.sql.SQLException;
 
-import javax.sql.DataSource;
-
 import com.zaxxer.hikari.HikariConfig;
 import com.zaxxer.hikari.HikariDataSource;
 
-
 public class DBConnect {
 
-	private static String jdbcURL = "jdbc:mysql://localhost/rivers";
+	private static String jdbcURL = "jdbc:mysql://localhost:3307/rivers";
 	private static HikariDataSource ds;
 
 	public static Connection getConnection() {
@@ -20,13 +17,13 @@ public class DBConnect {
 			HikariConfig config = new HikariConfig();
 			config.setJdbcUrl(jdbcURL);
 			config.setUsername("root");
-			config.setPassword("root");
-			
+			config.setPassword("");
+
 			// configurazione MySQL
 			config.addDataSourceProperty("cachePrepStmts", "true");
 			config.addDataSourceProperty("prepStmtCacheSize", "250");
 			config.addDataSourceProperty("prepStmtCacheSqlLimit", "2048");
-			
+
 			ds = new HikariDataSource(config);
 		}
 

@@ -8,7 +8,7 @@ public class River {
 	private String name;
 	private double flowAvg;
 	private List<Flow> flows;
-	
+
 	public River(int id) {
 		this.id = id;
 	}
@@ -33,7 +33,7 @@ public class River {
 	public void setName(String name) {
 		this.name = name;
 	}
-	
+
 	public double getFlowAvg() {
 		return flowAvg;
 	}
@@ -78,4 +78,5 @@ public class River {
 			return false;
 		return true;
 	}
+
 }
